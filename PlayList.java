@@ -219,7 +219,7 @@ class PlayList {
                     min=tracks[i].duration;
                      helper = i;                       
         }
-    return helper + start-1;
+    return helper + start;
 }
 
 
@@ -240,8 +240,14 @@ class PlayList {
         // Uses the selection sort algorithm,  
         // calling the minIndex method in each iteration.
          for (int i = 0; i < size - 1; i++) {
+            if(tracks[i] == null){
+                continue;
+            }
         int minIndex = i;
         for (int j = i + 1; j < size; j++) {
+            if(tracks[j]==null){
+                continue;
+            }
             if (tracks[j].duration < tracks[minIndex].duration) {
                 minIndex = j;
             }
