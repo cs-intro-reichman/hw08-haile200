@@ -183,8 +183,9 @@ class PlayList {
         int index = 0;
         for (int i = size; i < maxSize; i++) {
             if(other.size+size <= maxSize){
-            tracks[i]=other.tracks[index];
+            tracks[size]=other.tracks[index];
             size++;
+            index++;
             }
         }
     }
