@@ -73,9 +73,16 @@ class PlayList {
             return;
             
         }
-        //Removes the last track from this list
-        tracks[size-1]=null;
-        size--;
+        for (int i = maxSize-1; i > 0; i--) {
+            if(tracks[i]==null){
+                continue;
+            }
+            if(tracks[i]!=null){
+                tracks[i]=null;
+                    size--;
+                    break;
+        }
+    }
         return;
     }
     
@@ -158,6 +165,7 @@ class PlayList {
             if(j==i){
                 tracks[j]=null;
                 size--; 
+                break;
     }
 }
     }
@@ -179,7 +187,7 @@ class PlayList {
             return;
         }
         remove(0);
-        size--;
+
     }
     
     /** Adds all the tracks in the other list to the end of this list. 
@@ -191,21 +199,24 @@ class PlayList {
         }
         int index = 0;
         if(other != null && other.size > 0){
-        for (int i = size; i < maxSize; i++) {
+        for (int i = 0; i < maxSize; i++) {
             if(other.size+size <= maxSize){
                 if(other.tracks[index]== null){
                     index++;
                     continue;
                 }
-
-            tracks[size]=other.tracks[index];
+            }
+            for (int j = 0; j < maxSize; j++) {
+            if(tracks[j]==null){    
+            tracks[j]=other.tracks[index];
             size++;
             index++;
+            break;
             }
         }
-        
     }
 }
+     }
 
     /** Returns the index in this list of the track that has the shortest duration,
      *  starting the search in location start. For example, if the durations are 
