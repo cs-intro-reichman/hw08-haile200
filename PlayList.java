@@ -230,21 +230,19 @@ class PlayList {
         }
         int min = -1;
         int helper=0; 
+        if(tracks[start] != null){
+            min = tracks[start].duration;
+        }
         for (int i = start; i < size; i++) {
-            if(tracks[i] != null){
-                min = tracks[i].duration;
-            }
             if(tracks[i]== null){
                 continue;
             }
-                if(min > tracks[i].duration)
+                if(min > tracks[i].duration){
                     min=tracks[i].duration;
                      helper = i;                       
         }
-        if(start == 0 && helper==0){
-            return 0;
-        }
-    return helper + start-1;
+    }
+    return helper + start;
 }
 
 
