@@ -235,15 +235,14 @@ class PlayList {
             for (int j = i+1; j < size; j++) {
                 if (min > tracks[minIndex(j)].duration){
                     min =tracks[minIndex(j)].duration;
-                    swap(tracks[i],tracks[min]);
+                    swap(tracks, i, min);
             }
         }
     }
 }
-
-    public void swap (Track track1,Track track2){
-        Track tracktemp = track1;
-        track1 =track2;
-        track2 =tracktemp; 
+    public void swap(Track[] array, int i, int j) {
+        Track temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 }
