@@ -43,7 +43,7 @@ class RuniFi {
         display("After removing the last track", myList);
 
         PlayList newList = new PlayList(10);
-        newList.add(myList);
+        
     
         // Creates some tracks and adds them to a new list
         newList.add(new Track("Believe", "Cher", 240));
