@@ -79,7 +79,7 @@ class PlayList {
     /** Returns the total duration (in seconds) of all the tracks in this list.*/
     public int totalDuration() {
         int counter = 0;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < maxSize; i++) {
             if(tracks[i]==null){
                 continue;
             }
