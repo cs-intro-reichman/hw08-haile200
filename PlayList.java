@@ -187,7 +187,7 @@ class PlayList {
                 if(other.tracks[i]== null){
                     continue;
                 }
-            tracks[size]=other.tracks[index];
+            tracks[size]=other.tracks[i];
             size++;
             index++;
             }

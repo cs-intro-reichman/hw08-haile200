@@ -43,6 +43,7 @@ class RuniFi {
         display("After removing the last track", myList);
 
         PlayList newList = new PlayList(10);
+        newList.add(myList);
     
         // Creates some tracks and adds them to a new list
         newList.add(new Track("Believe", "Cher", 240));
@@ -60,6 +61,7 @@ class RuniFi {
 
         // Tests the ability to find the track with the shortest duration
         System.out.println("\nThe shortest track in my list is " + myList.titleOfShortestTrack());
+        
 
         // Sorts the list 
         myList.sortedInPlace();
