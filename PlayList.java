@@ -138,7 +138,7 @@ class PlayList {
         return true;
         
       } // In case he gets in between
-      if(i < size && maxSize > i){
+      if( maxSize > i){
         for (int j = size; j >= i; j--) {
             tracks[j+1]=tracks[j];
             if(i==j){
