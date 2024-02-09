@@ -41,6 +41,7 @@ class RuniFi {
 
         myList.removeLast();
         display("After removing the last track", myList);
+        
 
         PlayList newList = new PlayList(10);
         

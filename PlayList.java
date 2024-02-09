@@ -188,7 +188,8 @@ class PlayList {
                     index++;
                     continue;
                 }
-            tracks[size]=other.tracks[i];
+
+            tracks[size]=other.tracks[index];
             size++;
             index++;
             }
