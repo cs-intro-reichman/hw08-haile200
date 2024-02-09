@@ -35,7 +35,7 @@ class PlayList {
      *  If the list is full, does nothing and returns false.
      *  Otherwise, appends the track and returns true. */
     public boolean add(Track track) {
-        if(maxSize>size){
+        if( track != null && maxSize>size){
           tracks[size]=track;
           size++;
             return true;
@@ -48,7 +48,10 @@ class PlayList {
     //// For an efficient implementation, use StringBuilder.
     public String toString() {
         StringBuilder listOfSongs= new StringBuilder("\n");
-        for (int i = 0; i < size ; i++) {
+        for (int i = 0; i < maxSize ; i++) {
+            if(tracks[i]==null){
+                continue;
+            }
             if(tracks.length!=size && tracks[i]!=null ){
                 listOfSongs.append(tracks[i].getTitle())
                         .append(", ")
@@ -92,7 +95,10 @@ class PlayList {
     /** Returns the index of the track with the given title in this list.
      *  If such a track is not found, returns -1. */
     public int indexOf(String title) {
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < maxSize; i++) {
+            if(tracks[i]==null){
+                continue;
+            }
             if(tracks[i].getTitle().equals(title)){
                 return i;
             }
@@ -197,6 +203,7 @@ class PlayList {
             index++;
             }
         }
+        
     }
 }
 
