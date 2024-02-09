@@ -220,7 +220,7 @@ class PlayList {
                     min=tracks[i].duration;
                      helper = i;                       
         }
-    return helper + start;
+    return helper + start-1;
 }
 
 
