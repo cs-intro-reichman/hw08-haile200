@@ -80,6 +80,9 @@ class PlayList {
     public int totalDuration() {
         int counter = 0;
         for (int i = 0; i < size; i++) {
+            if(tracks[i]==null){
+                continue;
+            }
             counter+=tracks[i].duration;
             
         }
@@ -220,6 +223,9 @@ class PlayList {
                     min=tracks[i].duration;
                      helper = i;                       
         }
+        if(start == 0 && helper==0){
+            return 0;
+        }
     return helper + start-1;
 }
 
@@ -229,7 +235,7 @@ class PlayList {
     public String titleOfShortestTrack() {
         if(size==0) {
             return null;
-        } 
+        }        
         return tracks[minIndex(0)].getTitle();
 }
 
